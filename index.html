@@ -2,7 +2,8 @@
 <script>
   /* global nn */
   
-  const gifURL = 'https://swnjama.github.io/winterattempt/winterfinal.gif'
+  const gifURL1 = 'https://swnjama.github.io/winterattempt/winterfinal.gif'
+  const gifURL2 = 'https://swnjama.github.io/winterattempt/winter2gif.gif'
   const bgColor = '#e585ca'
   
   function createGif (x, y, w, h, url) {
@@ -24,9 +25,15 @@
       'overflow': 'hidden'
     })
     
-    const gif = await nn.loadImage(gifURL)
+    const gif = await nn.loadImage(gifURL1)
+    const gif2 = await nn.loadImage(gifURL2)
+    
     const cellWidth = gif.width 
     const cellHeight = gif.height 
+    
+    const cellWidth2 = gif2.width;
+    const cellHeight2 = gif2.height;
+    
     const numColumns = nn.width / cellWidth
     const numRows = (nn.height / cellHeight) * 0.75
     
@@ -34,9 +41,16 @@
       for (let c = 0; c < numColumns; c++) {
         const x = c * cellWidth
         const y = r * cellHeight
-        createGif(x, y, gif.width, gif.height, gifURL)
+        createGif(x, y, gif.width, gif.height, gifURL1)
       }
     }
+    const useSecondImage = Math.random() < 0.5; // Adjust the probability as needed
+
+      if (useSecondImage) {
+        createGif(x, y, cellWidth, cellHeight, gifURL2);
+      } else {
+        createGif(x, y, cellWidth, cellHeight, gifURL);
+      }
   }
   
   nn.on('load', setup)
