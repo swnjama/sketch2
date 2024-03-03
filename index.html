@@ -25,6 +25,8 @@
       `;
 
     // Create a style element and append it to the document head
+  
+    
     const styleElement = document.createElement('style');
     styleElement.innerHTML = keyframes;
     document.head.appendChild(styleElement);
@@ -38,7 +40,7 @@
     const gifURL7 = 'https://swnjama.github.io/winterattempt/winter7.gif'
     const gifURL8 = 'https://swnjama.github.io/winterattempt/winter8.gif'
 
-    const bgColor = '#e585ca'
+    const bgColor = 'hsl(204, 86%, 77%)'
 
     function createGif(x, y, w, h, url, animationDelay) {
       nn.create('img')
@@ -113,7 +115,7 @@
             const useSixthImage = Math.random() < 0.75; // 6/8 probability
             const useSeventhImage = Math.random() < 0.875; // 7/8 probability
             const useEighthImage = Math.random() < 1.0; // 8/8 probability
-            const animationDelay = r * 0.5;
+            const animationDelay = r * 0.2;
 
             if (useFirstImage) {
               createGif(x, y, cellWidth, cellHeight, gifURL1, animationDelay);
