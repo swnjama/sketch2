@@ -2,7 +2,7 @@
 <script>
   /* global nn */
   
-  const gifURL = 'https://raw.githubusercontent.com/swnjama/winterattempt/main/winterfinal.gif'
+  const gifURL = 'https://swnjama.github.io/winterattempt/winterfinal.gif'
   const bgColor = '#e585ca'
   
   function createGif (x, y, w, h, url) {
@@ -12,8 +12,8 @@
         position: 'absolute',
         width: `${w}px`,
         height: `${h}px`,
-        left: `${x - w / 2}px`,
-        top: `${y - h / 2}px`
+        left: `${x}px`,
+        top: `${y}px`
       })
       .addTo('body')
   }
@@ -25,8 +25,8 @@
     })
     
     const gif = await nn.loadImage(gifURL)
-    const cellWidth = gif.width / 8
-    const cellHeight = gif.height / 8
+    const cellWidth = gif.width 
+    const cellHeight = gif.height 
     const numColumns = nn.width / cellWidth
     const numRows = (nn.height / cellHeight) * 0.75
     
