@@ -28,8 +28,8 @@
     const gif = await nn.loadImage(gifURL1)
     const gif2 = await nn.loadImage(gifURL2)
     
-    const cellWidth = gif.width 
-    const cellHeight = gif.height 
+    const cellWidth = gif.width / 2
+    const cellHeight = gif.height / 2
     
     const cellWidth2 = gif2.width / 4;
     const cellHeight2 = gif2.height / 4;
@@ -38,16 +38,21 @@
     const numRows = (nn.height / cellHeight2) * 0.75
     
   
-   
-    for (let r = 0; r < numRows; r++) {
-    for (let c = 0; c < numColumns; c++) {
-    const x1 = c * cellWidth;
-    const y1 = r * cellHeight;
-    createGif(x1, y1, cellWidth, cellHeight, gifURL1);
+  
 
-    const x2 = c * cellWidth;
-    const y2 = r * cellHeight;
-    createGif(x2, y2, cellWidth2, cellHeight2, gifURL2);
+    for (let r = 0; r < numRows; r++) {
+  for (let c = 0; c < numColumns; c++) {
+    const x = c * cellWidth2;
+    const y = r * cellHeight2;
+
+    // Randomly choose whether to display the first or second image
+    const useFirstImage = Math.random() < 0.5;
+
+    if (useFirstImage) {
+      createGif(x, y, cellWidth, cellHeight, gifURL1);
+    } else {
+      createGif(x, y, cellWidth2, cellHeight2, gifURL2);
+    }
   }
 }
 
