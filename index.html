@@ -50,6 +50,21 @@
     const cellWidth3 = gif3.width / 2  ;
     const cellHeight3 = gif3.height / 2;
     
+    const cellWidth4 = gif4.width / 2  ;
+    const cellHeight4 = gif4.height / 2;
+    
+    const cellWidth5 = gif5.width / 2  ;
+    const cellHeight5 = gif5.height / 2;
+    
+    const cellWidth6 = gif6.width / 2  ;
+    const cellHeight6 = gif6.height / 2;
+    
+    const cellWidth7 = gif7.width / 2  ;
+    const cellHeight7 = gif7.height / 2;
+    
+    const cellWidth8 = gif8.width / 2  ;
+    const cellHeight8 = gif8.height / 2;
+    
     const numColumns = nn.width / cellWidth2
     const numRows = (nn.height / cellHeight2) * 0.75
     
@@ -62,16 +77,31 @@
     const y = r * cellHeight2;
 
     // Randomly choose whether to display the first or second image
-    const useFirstImage = Math.random() < 0.33;
-    const useSecondImage = Math.random() < 0.66;
-    const useThirdImage = Math.random() < 0.99;
+  const useFirstImage = Math.random() < 0.125;  // 1/8 probability
+    const useSecondImage = Math.random() < 0.25;   // 2/8 probability
+    const useThirdImage = Math.random() < 0.375;  // 3/8 probability
+    const useFourthImage = Math.random() < 0.5;    // 4/8 probability
+    const useFifthImage = Math.random() < 0.625;  // 5/8 probability
+    const useSixthImage = Math.random() < 0.75;   // 6/8 probability
+    const useSeventhImage = Math.random() < 0.875;  // 7/8 probability
+    const useEighthImage = Math.random() < 1.0;    // 8/8 probability
 
     if (useFirstImage) {
       createGif(x, y, cellWidth, cellHeight, gifURL1);
     } else if (useSecondImage) {
       createGif(x, y, cellWidth2, cellHeight2, gifURL2);
-    } else {
+    } else if (useThirdImage) {
       createGif(x, y, cellWidth3, cellHeight3, gifURL3);
+    } else if (useFourthImage){
+      createGif(x, y, cellWidth4, cellHeight4, gifURL4);
+    } else if (useFifthImage) {
+      createGif(x, y, cellWidth5, cellHeight5, gifURL5);
+    } else if (useSixthImage) {
+      createGif(x, y, cellWidth6, cellHeight6, gifURL6);
+    } else if (useSeventhImage) {
+      createGif(x, y, cellWidth7, cellHeight7, gifURL7);
+    } else {
+      createGif(x, y, cellWidth8, cellHeight8, gifURL8);
     }
     
   }
