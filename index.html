@@ -19,18 +19,18 @@
           }
           to {
             opacity: 0.9;
-            transform: translateY(0);
+            transform: translateY();
           }
         }
       
     @keyframes staggered-pop-up {
       from {
         opacity: 0.4;
-        transform: translateY(20px);
+        transform: translateY(-200px);
       }
       to {
         opacity: 0.9;
-        transform: translateY(0);
+        transform: translateY(10);
       }
     }
 `;
@@ -130,20 +130,19 @@
             const animationDelay = r * 0.2;
 
             if (useFirstImage) {
-              createGif(x, y, cellWidth, cellHeight, gifURL1, );
+              createGif(x, y, cellWidth, cellHeight, gifURL1, animationDelay);
             } else if (useSecondImage) {
               createGif(x, y, cellWidth2, cellHeight2, gifURL2, animationDelay);
             } else if (useThirdImage) {
-              createGif(x, y, cellWidth3, cellHeight3, gifURL3, animationDelay);
+              createGif(x, y, cellWidth3, cellHeight3, gifURL3, );
             } else if (useFourthImage) {
-              createGif(x, y, cellWidth4, cellHeight4, gifURL4, );
+              createGif(x, y, cellWidth4, cellHeight4, gifURL4, animationDelay );
             } else if (useFifthImage) {
               createGif(x, y, cellWidth5, cellHeight5, gifURL5, animationDelay);
             } else if (useSixthImage) {
               createGif(x, y, cellWidth6, cellHeight6, gifURL6, animationDelay);
             } else if (useSeventhImage) {
-              createGif(x, y, cellWidth7, cellHeight7, gifURL7,
-                       );
+              createGif(x, y, cellWidth7, cellHeight7, gifURL7,animationDelay );
             } else {
               createGif(x, y, cellWidth8, cellHeight8, gifURL8, animationDelay);
             }
