@@ -22,7 +22,18 @@
             transform: translateY(0);
           }
         }
-      `;
+      
+    @keyframes staggered-pop-up {
+      from {
+        opacity: 0.4;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 0.9;
+        transform: translateY(0);
+      }
+    }
+`;
 
     // Create a style element and append it to the document head
   
@@ -53,7 +64,8 @@
           height: `${h}px`,
           left: `${x}px`,
           top: `${y}px`,
-          animation: `fade-in 0.4s ${animationDelay}s both`
+          animation: `fade-in 0.3s ${animationDelay}s both, staggered-pop-up 0.4s ${animationDelay}s both`
+        
         })
         .addTo('body');
     }
@@ -74,7 +86,7 @@
       const gif8 = await nn.loadImage(gifURL8)
 
       const cellWidth = gif.width / 2
-      const cellHeight = gif.height / 2
+      const cellHeight = gif.height /2
 
       const cellWidth2 = gif2.width / 4;
       const cellHeight2 = gif2.height / 4;
@@ -141,8 +153,15 @@
 
       setupAnimation();
     }
-
     nn.on('load', setup);
+    
+    
+    
+    
+    
+
+            
+      
   </script>
 </body>
 
